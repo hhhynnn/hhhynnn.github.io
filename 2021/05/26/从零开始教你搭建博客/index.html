@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Zenith"><title>从零开始教你搭建博客 | Welcome</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">从零开始教你搭建博客</h1><a id="logo" href="/.">Welcome</a><p class="description">Singing with the days and dreaming with the nights.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">从零开始教你搭建博客</h1><div class="post-meta">2021-05-26</div><div class="post-content"><p><font size="7" color="red">快跑！</font>这个教程<font size="6" color="gree">有毒</font></p>
+<p>操作系统：Ubuntu 20.04</p>
+<p>参考教程：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=17488073384275823610">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></li>
+</ul>
+<h1 id="1-Hello-world"><a href="#1-Hello-world" class="headerlink" title="1. Hello, world"></a>1. Hello, world</h1><h2 id="1-1-基础工具：node-npm，git-hexo"><a href="#1-1-基础工具：node-npm，git-hexo" class="headerlink" title="1.1. 基础工具：node, npm，git, hexo"></a>1.1. 基础工具：node, npm，git, hexo</h2><h3 id="node-js安装"><a href="#node-js安装" class="headerlink" title="node.js安装"></a>node.js安装</h3><p>直接一条命令     <font size="2"><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44176696/article/details/107839095">–参考教程：[node.js在windows和ubuntu下安装及其简单使用]</a></font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs</span><br></pre></td></tr></table></figure>
+
+<h3 id="npm安装"><a href="#npm安装" class="headerlink" title="npm安装"></a>npm安装</h3><p>注意要先安装node.js再安装npm，也是直接一条命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install npm</span><br></pre></td></tr></table></figure>
+
+<h3 id="git安装与配置"><a href="#git安装与配置" class="headerlink" title="git安装与配置"></a>git安装与配置</h3><p>注：git不仅要安装，而且需要配置名字和email</p>
+<h4 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h4><p>直接敲命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-设置账户信息"><a href="#2-设置账户信息" class="headerlink" title="2. 设置账户信息"></a>2. 设置账户信息</h4><p>安装完git后需要先创建个名字和email地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后创建SSH Key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ls -a</span><br></pre></td></tr></table></figure>
+
+<p>如果<code>~/ssh</code>目录里没有 <code>id_rsa</code> 和 <code>id_rsa.pub</code> （多半没有），则敲以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;2030206080@qq.com</span><br></pre></td></tr></table></figure>
+
+<p>此时<code>./ssh</code>中会生成 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 两个文件，其中<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥</p>
+<p>注意这个<code>id_rsa.pub</code>文件，之后会用到</p>
+<h3 id="全局安装hexo"><a href="#全局安装hexo" class="headerlink" title="全局安装hexo"></a>全局安装hexo</h3><p>敲命令，这个命令在hexo官网上有介绍，具体可以查看<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo官网</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>(忘了加sudo把我坑死了，npm提示说什么是代理的问题，结果并不能解决问题)</p>
+<h2 id="1-2-生成本地文件"><a href="#1-2-生成本地文件" class="headerlink" title="1.2. 生成本地文件"></a>1.2. 生成本地文件</h2><p>选择一个喜欢的路径新建文件夹，敲以下命令初始化一个博客目录</p>
+<p>这个命令会新建一个<code>ZenithBlog</code>文件夹，并加载一系列组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo hexo init ZenithBlog</span><br></pre></td></tr></table></figure>
+
+<p>进入<code>ZenithBlog</code>并敲以下命令进一步加载一些组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ZenithBlog</span><br><span class="line">$ sudo npm install</span><br></pre></td></tr></table></figure>
+
+<p>ps.输入这个命令的时候npm给我报warning了，具体如下，目前并不知道有什么用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>现在即可启动hexo，访问本地4000端口即可，也可通过以下指令指定端口进行访问</p>
+<p>以44944端口为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -p 44944</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器访问 <code>localhost:44944</code>即可</p>
+<p><font size= "5" color ="blue">对不起</font>，我<font size="7" color="red">失败了</font>……….教程到此结束，谢谢！</p>
+<h2 id="1-3-部署到github"><a href="#1-3-部署到github" class="headerlink" title="1.3. 部署到github"></a>1.3. 部署到github</h2><p>step1. 在<code>ZenithBlog/</code>目录下执行 <code>找不到npm install hexo-deployer-git --save</code> 下载必要组件</p>
+<p>step2. 修改在<code>ZenithBlog/_config.yml</code> 中的 <code>deploy</code>值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:hhhynnn/hhhynnn.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-部署到阿里云"><a href="#1-4-部署到阿里云" class="headerlink" title="1.4. 部署到阿里云"></a>1.4. 部署到阿里云</h2><ul>
+<li><p>下载 npm, git, hexo 等系列组件</p>
+</li>
+<li><p>配置 git 的 ssh</p>
+</li>
+</ul>
+<p>注：在服务器上建立<code>~/.ssh/authorized_keys</code>文件，把客户端的<code>~/ssh/id_rsa.pub</code>复制到里面，即可实现直接 ssh 链接，不需要密码验证（github 的 ssh 连接原理也是如此）</p>
+<ul>
+<li>设置服务器的显示主页</li>
+</ul>
+<h1 id="2-主题美化"><a href="#2-主题美化" class="headerlink" title="2. 主题美化"></a>2. 主题美化</h1><h2 id="2-1-切换主题"><a href="#2-1-切换主题" class="headerlink" title="2.1. 切换主题"></a>2.1. 切换主题</h2><p>Hexo 主题更换教程(<a href="https://link.zhihu.com/?target=https://github.com/dwqs/nx">https://github.com/dwqs/nx</a>)</p>
+<blockquote>
+<p>主题资源地址： <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes</a>，东西很多，随便找</p>
+<p>假设想换的主题叫 “Kartos-Rebirth”，参考地址： <a target="_blank" rel="noopener" href="https://kr-demo.candinya.com/posts/Kratos-Rebirth-Manual/">Kratos-Rebirth 文档</a></p>
+</blockquote>
+<p>step1. 下载主题文件到<code>./themes/Kartos-Rebirth</code></p>
+<p>step2. 修改<code>./_config.yml</code> 文件中的 <code>theme</code>值</p>
+<p>step3. 根据主题作者的文档进行相关配置</p>
+<p>e.g. Kartos-Rebirth 主题作者要求修改<code>Kartos-Rebirth/_config.yml.example</code> 为 <code>Kartos-Rebirth/_config.yml</code></p>
+<p>step4. 在<code>./</code>目录下依次执行 <code>hexo clean</code> , <code>hexo g</code> , <code>hexo d</code></p>
+<h2 id="2-2-配置主题界面"><a href="#2-2-配置主题界面" class="headerlink" title="2.2. 配置主题界面"></a>2.2. 配置主题界面</h2><h1 id="3-文件架构"><a href="#3-文件架构" class="headerlink" title="3. 文件架构"></a>3. 文件架构</h1><h2 id="3-1-markdown引用链接"><a href="#3-1-markdown引用链接" class="headerlink" title="3.1 markdown引用链接"></a>3.1 markdown引用链接</h2></div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2021/05/26/%E5%BD%A9%E8%9B%8B/">好好学习，天天向上</a><a class="next" href="/2021/05/26/%E6%9C%89%E5%BE%85%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%9C%E8%A5%BF/">Java修炼之路</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://hyinan.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/05/26/%E5%BD%A9%E8%9B%8B/">好好学习，天天向上</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">从零开始教你搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/26/%E6%9C%89%E5%BE%85%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%9C%E8%A5%BF/">Java修炼之路</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">Welcome.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
