@@ -6,7 +6,7 @@
   <link href="http://hyinan.com/atom.xml" rel="self"/>
   
   <link href="http://hyinan.com/"/>
-  <updated>2023-03-31T14:46:38.729Z</updated>
+  <updated>2023-03-31T14:19:55.148Z</updated>
   <id>http://hyinan.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>hello world</title>
-    <link href="http://hyinan.com/2023/03/31/hello-world/"/>
-    <id>http://hyinan.com/2023/03/31/hello-world/</id>
-    <published>2023-03-31T14:46:30.000Z</published>
-    <updated>2023-03-31T14:46:38.729Z</updated>
-    
-    <content type="html"><![CDATA[<p>啥也没有</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;啥也没有&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>搭建hexo博客</title>
