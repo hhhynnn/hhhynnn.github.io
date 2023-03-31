@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://hyinan.com/2023/03/31/hello-world/</loc>
+        <lastmod>2023-03-31T14:46:38.729Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/</loc>
         <lastmod>2023-03-31T14:44:30.576Z</lastmod>
         <changefreq>weekly</changefreq>
