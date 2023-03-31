@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="John Doe" />
+
+
+
+<meta name="description" content="这个部署过程还挺坑，记录一下方面自己复刻, 主要是配置服务器的 nginx 和 git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo部署到服务器">
+<meta property="og:url" content="http://example.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这个部署过程还挺坑，记录一下方面自己复刻, 主要是配置服务器的 nginx 和 git">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-03-31T14:03:50.000Z">
+<meta property="article:modified_time" content="2023-03-31T14:05:15.419Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>hexo部署到服务器 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-tips/hexo/hexo部署到服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+      <time datetime="2023-03-31T14:03:50.000Z" itemprop="datePublished">2023-03-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo部署到服务器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>这个部署过程还挺坑，记录一下方面自己复刻, 主要是配置服务器的 nginx 和 git</p>
+<span id="more"></span>
+
+
+
+<h3 id="1-服务器配置"><a href="#1-服务器配置" class="headerlink" title="(1) 服务器配置"></a>(1) 服务器配置</h3><p>主要分为 git 远程连接配置，git hook 文件配置，nginx 主页配置这三步</p>
+<p>参考教程：<a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/8fe4fa3098aaf70bc38749847">在自己的服务器上部署 hexo 博客</a></p>
+<p>配置服务器的第一步是设置无密码登陆，即在服务器上修改 <code>~/.ssh/authorized_keys</code>文件，把客户端的<code>~/ssh/id_rsa.pub</code>复制到里面，即可实现直接 ssh 链接，不需要密码验证（github 的 ssh 连接原理也是如此）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ~/.ssh/authorized_keys</span></span><br><span class="line">---</span><br><span class="line">(把自己电脑的 id_rsa.pub 数据复制到文件里)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-配置服务器-nginx-服务"><a href="#1-配置服务器-nginx-服务" class="headerlink" title="1 配置服务器 nginx 服务"></a>1 配置服务器 nginx 服务</h4><p>重装过一遍服务器系统，ssh 登陆不上了</p>
+<p>解决办法是本地 .ssh 文件夹内的 kowns_hosts 删除服务器相关项目</p>
+<h5 id="1-卸载已存在的-nginx"><a href="#1-卸载已存在的-nginx" class="headerlink" title="1. 卸载已存在的 nginx"></a>1. 卸载已存在的 nginx</h5><p>如果已存在 nginx 可以考虑卸载了。。。方便跟教程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查找 nginx 相关文件</span></span><br><span class="line">whereis nginx | tr &#x27; &#x27; &#x27;\n&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除上述文件/文件夹</span></span><br><span class="line">rm -rf  xxxx/nginx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除 nginx</span></span><br><span class="line">apt-get remove nginx*</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-下载-nginx"><a href="#2-下载-nginx" class="headerlink" title="2. 下载 nginx"></a>2. 下载 nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入安装目录</span></span><br><span class="line">cd /usr/local/src/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.22.0.tar.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解压</span></span><br><span class="line">tar -xvf nginx-1.22.0.tar.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重命名</span></span><br><span class="line">mv  nginx-1.10.2  nginx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-编译-nginx"><a href="#3-编译-nginx" class="headerlink" title="3. 编译 nginx"></a>3. 编译 nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入目录并编译安装</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装编译必须的包</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">apt-get install libpcre3 libpcre3-dev</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编译</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./configure</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make install</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置 ngxin 的快捷执行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">alias</span> nginx=/usr/local/nginx/sbin/nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通过修改环境变量的方式也可以让 nginx 快捷执行（没必要, <span class="built_in">alias</span> 够了）</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ~/.bashrc</span></span><br><span class="line">---</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加这一句话</span></span><br><span class="line">export PATH=$PATH:/usr/local/nginx/sbin/</span><br><span class="line">---</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">source</span> ~/.bashrc</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-设置服务器主页文件夹"><a href="#4-设置服务器主页文件夹" class="headerlink" title="4. 设置服务器主页文件夹"></a>4. 设置服务器主页文件夹</h5><p>方法是修改<code>nginx.conf</code> 文件，如下步骤</p>
+<p><strong>找到 conf 文件</strong></p>
+<p>下面看到了两个 nginx.conf，我们选择 nginx 文件夹下存在 sbin 文件夹的那个路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">find / -name nginx.conf</span></span><br><span class="line">----</span><br><span class="line">/usr/local/nginx/conf/nginx.conf</span><br><span class="line">/usr/local/src/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改 conf 文件</strong></p>
+<p>特别注意：<code> /root/blog/public</code> 这个路径是将来服务器主页的地址，后面配置 git 的 hook 函数时也要用到这个地址！！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim /usr/local/nginx/conf/nginx.conf</span></span><br><span class="line">---</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 user root;</span></span><br><span class="line">user root;</span><br><span class="line">...</span><br><span class="line">http&#123;</span><br><span class="line">  ...</span><br><span class="line">  server &#123;</span><br><span class="line">    location / &#123;</span><br><span class="line">      # 修改为 root /root/blog/public; 后面我们的服务器主页就设置在这个文件夹下</span><br><span class="line">      root /root/blog/public;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-运行-nginx"><a href="#5-运行-nginx" class="headerlink" title="5. 运行 nginx"></a>5. 运行 nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 80 端口占用并 <span class="built_in">kill</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">netstat -lnp | grep 80</span></span><br><span class="line">-----</span><br><span class="line">tcp6       0      0 :::80                   :::*                    LISTEN      42464/apache2</span><br><span class="line">-----</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">强制杀死进程 42464，这个数字在上面的输出中有出现</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">kill</span> -9 42464</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">apache2 的占用比较特殊，需要手动关闭</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">service apache2 stop</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动 nginx</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">nginx</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看端口占用, nginx 主页是 80 端口</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">lsof -i:80</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="6-重启-ngxinx"><a href="#6-重启-ngxinx" class="headerlink" title="6. 重启 ngxinx"></a>6. 重启 ngxinx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">nginx -s reload</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-配置-git-仓库"><a href="#2-配置-git-仓库" class="headerlink" title="2 配置 git 仓库"></a>2 配置 git 仓库</h4><p><strong>安装 git</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">apt-get updata</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">apt-get upgrade</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">apt-get install git-all</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>新建 git 仓库</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建空仓库</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /root/blog/</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git init --bare zenithBlog.git</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>添加 hook 用文件</strong></p>
+<p>特别注意，配置 git 的 hook时，要用到配置 nginx 时定义的服务器主页地址 <code> /root/blog/public</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建 post-receive 文件</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">vim ./zenithBlog.git/hooks/post-receive</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">写 hook 文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--work-tree 是 nginx.conf 中定义的服务器主页地址</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--git-dir 是 hexo-deploy 的目标文件夹，也就是你刚刚创建的那个</span></span><br><span class="line">-----</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">git --work-tree=/root/blog/public --git-dir=/root/blog/zenithBlog.git checkout -f</span><br><span class="line">-----</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改 post-receive 为可执行</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> +x ./zenithBlog.git/hooks/post-receive</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="（2）本地配置"><a href="#（2）本地配置" class="headerlink" title="（2）本地配置"></a>（2）本地配置</h3><p>本地配置只有一个，修改<code>_config.yml</code>，定义博客的部署方式，注意把下面的 ip 地址改成服务器地址</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./zenithBlog/_config.yml</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">root@xxx.xxx.xxx.xxx:/root/blog/zenithBlog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>安装 git 部署工具</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">./zenithBlog/</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm install hexo-deployer-git --save</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="（3）-部署"><a href="#（3）-部署" class="headerlink" title="（3） 部署"></a>（3） 部署</h2><p>本地执行部署命令即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署到 hexo</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">hexo部署到服务器</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
+        <p><span>发布时间:</span>2023-03-31, 22:03:50</p>
+        <p><span>最后更新:</span>2023-03-31, 22:05:15</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="hexo部署到服务器">http://example.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/">
+                    hexo语法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">(1) 服务器配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8-nginx-%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">1 配置服务器 nginx 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8D%B8%E8%BD%BD%E5%B7%B2%E5%AD%98%E5%9C%A8%E7%9A%84-nginx"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 卸载已存在的 nginx</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%B8%8B%E8%BD%BD-nginx"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 下载 nginx</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%BC%96%E8%AF%91-nginx"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 编译 nginx</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E9%A1%B5%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 设置服务器主页文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E8%BF%90%E8%A1%8C-nginx"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 运行 nginx</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E9%87%8D%E5%90%AF-ngxinx"><span class="toc-number">1.1.6.</span> <span class="toc-text">6. 重启 ngxinx</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-git-%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text">2 配置 git 仓库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">（2）本地配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%883%EF%BC%89-%E9%83%A8%E7%BD%B2"><span class="toc-number"></span> <span class="toc-text">（3） 部署</span></a>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"hexo部署到服务器　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/" title="下一篇: hexo语法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">hexo部署到服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/">hexo语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/31/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2023 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
