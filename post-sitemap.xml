@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>http://hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2023-04-01T06:03:43.414Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hyinan.com/2023/04/01/tips/latex/</loc>
-        <lastmod>2023-04-01T05:34:45.780Z</lastmod>
+        <lastmod>2023-04-01T05:59:11.280Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -19,14 +27,6 @@
     <url>
         <loc>http://hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/</loc>
         <lastmod>2023-03-31T14:44:30.576Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2023-03-31T14:19:55.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
