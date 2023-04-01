@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://hyinan.com/</loc>
+        <loc>http://www.hyinan.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>http://hyinan.com/about/</loc>
+        <loc>http://www.hyinan.com/about/</loc>
         <lastmod>2023-04-01T15:03:41.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>http://hyinan.com/tags/</loc>
+        <loc>http://www.hyinan.com/tags/</loc>
         <lastmod>2023-03-31T14:18:55.286Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

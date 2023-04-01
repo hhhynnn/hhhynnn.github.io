@@ -3,17 +3,17 @@
 
 
     <sitemap>
-        <loc>http://hyinan.com/post-sitemap.xml</loc>
+        <loc>http://www.hyinan.com/post-sitemap.xml</loc>
         <lastmod>2023-04-01T07:23:48.472Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://hyinan.com/page-sitemap.xml</loc>
+        <loc>http://www.hyinan.com/page-sitemap.xml</loc>
         <lastmod>2023-04-01T15:03:41.009Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://hyinan.com/tag-sitemap.xml</loc>
+        <loc>http://www.hyinan.com/tag-sitemap.xml</loc>
         <lastmod>2023-04-01T06:05:35.614Z</lastmod>
     </sitemap>
 

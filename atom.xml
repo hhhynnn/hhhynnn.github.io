@@ -3,11 +3,11 @@
   <title>Zenith</title>
   
   <subtitle>HYN</subtitle>
-  <link href="http://hyinan.com/atom.xml" rel="self"/>
+  <link href="http://www.hyinan.com/atom.xml" rel="self"/>
   
-  <link href="http://hyinan.com/"/>
+  <link href="http://www.hyinan.com/"/>
   <updated>2023-04-01T07:23:48.472Z</updated>
-  <id>http://hyinan.com/</id>
+  <id>http://www.hyinan.com/</id>
   
   <author>
     <name>Zenith</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>latex</title>
-    <link href="http://hyinan.com/2023/04/01/tips/latex/"/>
-    <id>http://hyinan.com/2023/04/01/tips/latex/</id>
+    <link href="http://www.hyinan.com/2023/04/01/tips/latex/"/>
+    <id>http://www.hyinan.com/2023/04/01/tips/latex/</id>
     <published>2023-04-01T02:51:58.000Z</published>
     <updated>2023-04-01T07:23:48.472Z</updated>
     
@@ -35,8 +35,8 @@
   
   <entry>
     <title>搭建hexo博客</title>
-    <link href="http://hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</id>
+    <link href="http://www.hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://www.hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-31T14:12:57.000Z</published>
     <updated>2023-04-01T06:05:35.614Z</updated>
     
@@ -48,14 +48,14 @@
     
     
     
-    <category term="hexo" scheme="http://hyinan.com/tags/hexo/"/>
+    <category term="hexo" scheme="http://www.hyinan.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>hexo部署到服务器</title>
-    <link href="http://hyinan.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>http://hyinan.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <link href="http://www.hyinan.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://www.hyinan.com/2023/03/31/tips/hexo/hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
     <published>2023-03-31T14:03:50.000Z</published>
     <updated>2023-03-31T14:19:53.067Z</updated>
     
@@ -67,14 +67,14 @@
     
     
     
-    <category term="hexo" scheme="http://hyinan.com/tags/hexo/"/>
+    <category term="hexo" scheme="http://www.hyinan.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>hexo语法</title>
-    <link href="http://hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/"/>
-    <id>http://hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/</id>
+    <link href="http://www.hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/"/>
+    <id>http://www.hyinan.com/2023/03/31/tips/hexo/hexo%E8%AF%AD%E6%B3%95/</id>
     <published>2023-03-31T14:00:25.000Z</published>
     <updated>2023-03-31T14:44:30.576Z</updated>
     
@@ -86,7 +86,7 @@
     
     
     
-    <category term="hexo" scheme="http://hyinan.com/tags/hexo/"/>
+    <category term="hexo" scheme="http://www.hyinan.com/tags/hexo/"/>
     
   </entry>
   
