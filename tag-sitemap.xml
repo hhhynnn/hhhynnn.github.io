@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/tags/latex/</loc>
+        <lastmod>2023-04-01T15:32:58.288Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/tags/hexo/</loc>
         <lastmod>2023-04-01T15:32:43.403Z</lastmod>
         <changefreq>weekly</changefreq>
