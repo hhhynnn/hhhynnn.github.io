@@ -4,7 +4,7 @@
 
     <sitemap>
         <loc>http://www.hyinan.com/post-sitemap.xml</loc>
-        <lastmod>2023-04-01T07:23:48.472Z</lastmod>
+        <lastmod>2023-04-01T15:32:49.725Z</lastmod>
     </sitemap>
 
     <sitemap>
@@ -13,8 +13,13 @@
     </sitemap>
 
     <sitemap>
+        <loc>http://www.hyinan.com/category-sitemap.xml</loc>
+        <lastmod>2023-04-01T15:32:49.725Z</lastmod>
+    </sitemap>
+
+    <sitemap>
         <loc>http://www.hyinan.com/tag-sitemap.xml</loc>
-        <lastmod>2023-04-01T06:05:35.614Z</lastmod>
+        <lastmod>2023-04-01T15:32:43.403Z</lastmod>
     </sitemap>
 
 </sitemapindex>
