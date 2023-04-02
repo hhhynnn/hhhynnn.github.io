@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2023-04-02T07:55:01.389Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/2023/04/02/python/scrapy%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2023-04-02T07:47:52.531Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,14 +51,6 @@
     <url>
         <loc>http://www.hyinan.com/2023/04/02/tips/hexo/hexo%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
         <lastmod>2023-04-02T01:35:00.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.hyinan.com/2023/03/31/tips/hexo/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2023-04-02T01:33:39.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
