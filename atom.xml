@@ -6,7 +6,7 @@
   <link href="http://www.hyinan.com/atom.xml" rel="self"/>
   
   <link href="http://www.hyinan.com/"/>
-  <updated>2023-04-02T06:18:15.917Z</updated>
+  <updated>2023-04-02T06:19:29.326Z</updated>
   <id>http://www.hyinan.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>docker踩坑</title>
+    <title>docker desktop stopped</title>
     <link href="http://www.hyinan.com/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/"/>
     <id>http://www.hyinan.com/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/</id>
     <published>2023-04-02T06:08:57.000Z</published>
-    <updated>2023-04-02T06:18:15.917Z</updated>
+    <updated>2023-04-02T06:19:29.326Z</updated>
     
     <content type="html"><![CDATA[<p>docker 一启动就显示“docker desktop stopped”，工作不正常的解决办法</p><span id="more"></span><p>2023.4.1 被同学叫去玩明日方舟，下载了个网易 MUMU 模拟器，稀里糊涂安装完之后，今天 (2023.4.2) 发现 docker 无法启动了。<br>百思不得其解，经反复研究发现：原来是 MUMU 安装的时候关闭了我的 Hyper-V，坑爹。下面是我的解决方法：</p><h3 id="1-打开“启动或关闭-windows-功能”"><a href="#1-打开“启动或关闭-windows-功能”" class="headerlink" title="1.打开“启动或关闭 windows 功能”"></a>1.打开“启动或关闭 windows 功能”</h3><p>可以直接搜索到这项设置，很方便：</p class='item-img' data-src='/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/image-20230402141443323.png'><img src="/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/image-20230402141443323.png" alt="image-20230402141443323" style="zoom:80%;"><h3 id="2-开启虚拟机服务"><a href="#2-开启虚拟机服务" class="headerlink" title="2. 开启虚拟机服务"></a>2. 开启虚拟机服务</h3><p>win10 上会有一个 Hyper-V 选项，我是 win11 没找到，但找到了叫“虚拟机平台”的，类似，把他打开</p class='item-img' data-src='/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/image-20230402141556466.png'><img src="/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/image-20230402141556466.png" alt="image-20230402141556466" style="zoom:80%;"><h3 id="3-重启电脑"><a href="#3-重启电脑" class="headerlink" title="3. 重启电脑"></a>3. 重启电脑</h3><p>弄完之后他会提示重启电脑，重启之后就好了，docker desktop 就能正常启动了。</p>]]></content>
     
