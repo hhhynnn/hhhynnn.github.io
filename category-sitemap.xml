@@ -9,15 +9,15 @@
 
 
     <url>
-        <loc>http://www.hyinan.com/categories/tips/</loc>
-        <lastmod>2023-04-02T08:25:24.415Z</lastmod>
+        <loc>http://www.hyinan.com/categories/python/</loc>
+        <lastmod>2023-04-02T12:46:49.909Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.hyinan.com/categories/python/</loc>
-        <lastmod>2023-04-02T08:16:31.411Z</lastmod>
+        <loc>http://www.hyinan.com/categories/tips/</loc>
+        <lastmod>2023-04-02T08:25:24.415Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

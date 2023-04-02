@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/2023/04/02/python/scrapy%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2023-04-02T12:46:49.909Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/2023/04/02/tips/windows%E8%BE%93%E5%85%A5%E6%B3%95%E5%8D%A1%E9%A1%BF/</loc>
         <lastmod>2023-04-02T08:25:24.415Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,14 +51,6 @@
     <url>
         <loc>http://www.hyinan.com/2023/04/02/python/requests%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2023-04-02T08:14:52.436Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.hyinan.com/2023/04/02/python/scrapy%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2023-04-02T08:05:45.658Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
