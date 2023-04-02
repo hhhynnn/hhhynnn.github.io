@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>服务器后台执行python</title>
+      <link href="/2023/04/02/tips/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8Cpython/"/>
+      <url>/2023/04/02/tips/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8Cpython/</url>
+      
+        <content type="html"><![CDATA[<p>在Linux跑Python脚本的指令，以及相关的控制命令</p><span id="more"></span><h2 id="脚本运行指令"><a href="#脚本运行指令" class="headerlink" title="脚本运行指令"></a>脚本运行指令</h2><p>命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nohup python -u test.py &gt; test.log 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure><ul><li><p><code>nohup</code>：程序不被挂起</p></li><li><p><code>-u</code>：不启用缓存，实时打印信息到输出文件</p><p>不加-u会导致日志文件不会实时刷新</p></li><li><p><code>&gt;</code>：重定向打印信息</p></li><li><p><code>2&gt;&amp;1</code>：将 stderr 转化为 stdout (0=stdin, 1=stdout, 2=stderr)</p></li><li></li></ul><h2 id="管理后台程序"><a href="#管理后台程序" class="headerlink" title="管理后台程序"></a>管理后台程序</h2><p><strong>查找后台程序的PID</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ps -ef | grep python<br></code></pre></td></tr></table></figure><p><strong>杀死后台进程</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">kill -s 9 &lt;pid&gt;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker desktop 无法启动</title>
       <link href="/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/"/>
       <url>/2023/04/02/tips/docker%E8%B8%A9%E5%9D%91/</url>
