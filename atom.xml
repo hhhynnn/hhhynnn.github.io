@@ -6,7 +6,7 @@
   <link href="http://www.hyinan.com/atom.xml" rel="self"/>
   
   <link href="http://www.hyinan.com/"/>
-  <updated>2023-04-02T08:18:53.500Z</updated>
+  <updated>2023-04-02T08:21:48.765Z</updated>
   <id>http://www.hyinan.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决windows窗口拖出屏幕拖不回来的问题</title>
+    <link href="http://www.hyinan.com/2023/04/02/tips/windows%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8/"/>
+    <id>http://www.hyinan.com/2023/04/02/tips/windows%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8/</id>
+    <published>2023-04-02T08:21:27.000Z</published>
+    <updated>2023-04-02T08:21:48.765Z</updated>
+    
+    <content type="html"><![CDATA[<p>windows 窗口拖动到电脑边缘后拖不回来，可以用键盘快捷键救急</p><span id="more"></span><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li><p><code>alt + tab</code> 切换到需要拖动的窗口</p></li><li><p><code>alt + 空格</code> 打开窗口控制选项</p><p class='item-img' data-src='/2023/04/02/tips/windows%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8/image-20220311135205374.png'><img src="/2023/04/02/tips/windows%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8/image-20220311135205374.png" alt="image-20220311135205374" style="zoom:80%;">            <img src="/2023/04/02/tips/windows%E7%AA%97%E5%8F%A3%E6%8B%96%E5%8A%A8/../../../ZenithBlog_old/source/_posts/Tips/窗口拖动/image-20220311135150031.png" alt="image-20220311135150031" style="zoom: 80%;">     </p></li><li><p><code>m</code> 选择移动窗口，或 <code>r</code> 退出全屏</p></li><li><p>把窗口拖回来</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;windows 窗口拖动到电脑边缘后拖不回来，可以用键盘快捷键救急&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tips" scheme="http://www.hyinan.com/categories/tips/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决windows输入法卡顿问题</title>
+    <link href="http://www.hyinan.com/2023/04/02/tips/windows%E8%BE%93%E5%85%A5%E6%B3%95%E5%8D%A1%E9%A1%BF/"/>
+    <id>http://www.hyinan.com/2023/04/02/tips/windows%E8%BE%93%E5%85%A5%E6%B3%95%E5%8D%A1%E9%A1%BF/</id>
+    <published>2023-04-02T08:20:25.000Z</published>
+    <updated>2023-04-02T08:20:39.371Z</updated>
+    
+    <content type="html"><![CDATA[<p>找到自己的输入法的本地词库及配置文件目录，</p><span id="more"></span><p>C:\Users\用户名\AppData\Roaming\Microsoft\InputMethod\Chs；</p><p>将整个Chs文件夹删除重启即可。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;找到自己的输入法的本地词库及配置文件目录，&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tips" scheme="http://www.hyinan.com/categories/tips/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>用jpg隐藏zip文件</title>
