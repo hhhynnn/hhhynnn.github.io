@@ -9,16 +9,24 @@
 
 
     <url>
-        <loc>http://www.hyinan.com/2023/04/02/python/scrapy%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2023-04-03T01:38:05.152Z</lastmod>
+        <loc>http://www.hyinan.com/2023/04/02/life/%E4%B8%AD%E7%A2%B3%E6%97%A5/</loc>
+        <lastmod>2023-04-10T05:41:16.619Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://www.hyinan.com/2023/04/02/life/%E4%B8%AD%E7%A2%B3%E6%97%A5/</loc>
-        <lastmod>2023-04-02T14:19:47.165Z</lastmod>
+        <loc>http://www.hyinan.com/2023/04/03/python/pytorch%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2023-04-03T02:34:13.936Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.hyinan.com/2023/04/02/python/scrapy%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2023-04-03T01:38:05.152Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
