@@ -9,8 +9,15 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/categories/book/</loc>
+        <lastmod>2023-04-14T07:04:50.194Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/categories/life/</loc>
-        <lastmod>2023-04-10T05:41:16.619Z</lastmod>
+        <lastmod>2023-04-11T13:57:35.580Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
