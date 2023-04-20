@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/categories/tips/</loc>
+        <lastmod>2023-04-20T08:25:35.035Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/categories/book/</loc>
         <lastmod>2023-04-14T07:04:50.194Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +32,6 @@
     <url>
         <loc>http://www.hyinan.com/categories/python/</loc>
         <lastmod>2023-04-03T02:34:13.936Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.hyinan.com/categories/tips/</loc>
-        <lastmod>2023-04-02T08:25:24.415Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
