@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://www.hyinan.com/2023/04/02/python/requests%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2023-04-22T13:15:18.705Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.hyinan.com/2023/04/20/tips/excel%E7%BB%9F%E8%AE%A1%E5%A1%AB%E5%85%85%E8%89%B2%E6%95%B0%E9%87%8F/</loc>
         <lastmod>2023-04-20T08:25:35.035Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -75,14 +83,6 @@
     <url>
         <loc>http://www.hyinan.com/2023/04/02/python/B%E7%AB%99%E7%9B%B4%E6%92%AD%E9%97%B4%E5%8F%91%E9%80%81%E5%BC%B9%E5%B9%95/</loc>
         <lastmod>2023-04-02T08:16:31.411Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.hyinan.com/2023/04/02/python/requests%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2023-04-02T08:14:52.436Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
